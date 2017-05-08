@@ -16,7 +16,7 @@ Fluentd Daemonset for Kubernetes
 - `v0.12.33-logentries`,`v0.12-logentries`,`stable-logentries`,`logentries`
   [(v0.12/alpine-logentries/Dockerfile)][alpine-logentries-dockerfile]
 - `v0.12.33-logzio`,`v0.12-logzio`,`stable-logzio`,`logzio`
-  [(v0.12/logzio/Dockerfile)][alpine-logzio-dockerfile]
+  [(v0.12/alpine-logzio/Dockerfile)][alpine-logzio-dockerfile]
 - `v0.12.33-cloudwatch`,`v0.12-cloudwatch`,`stable-cloudwatch`,`cloudwatch`
   [(v0.12/alpine-cloudwatch/Dockerfile)][alpine-cloudwatch-dockerfile]
 - `v0.12.33-debian-elasticsearch`,`v0.12-debian-elasticsearch`, `debian-elasticsearch`
@@ -25,6 +25,8 @@ Fluentd Daemonset for Kubernetes
   [(v0.12/debian-loggly/Dockerfile)][debian-loggly-dockerfile]
 - `v0.12.33-debian-logentries`,`v0.12-debian-logentries`,`debian-logentries`
   [(v0.12/debian-logentries/Dockerfile)][debian-logentries-dockerfile]
+- `v0.12.33-debian-logzio`,`v0.12-debian-logzio`,`stable-debian-logzio`,`debian-logzio`
+  [(v0.12/debian-logzio/Dockerfile)][debian-logzio-dockerfile]
 - `v0.12.33-debian-cloudwatch`,`v0.12-debian-cloudwatch`,`debian-cloudwatch`
   [(v0.12/debian-cloudwatch/Dockerfile)][debian-cloudwatch-dockerfile]
 
