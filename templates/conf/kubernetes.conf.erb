@@ -122,6 +122,15 @@
   tag cluster-autoscaler
 </source>
 
+# Add multiline support: 
+# any line that starts with a space is added to previous log message
+<filter kubernetes.**>
+  @type concat
+  key log
+  multiline_start_regexp /^\S+/
+  flush_interval 1m
+</filter>
+
 <filter kubernetes.**>
   type kubernetes_metadata
 </filter>
