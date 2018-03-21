@@ -18,5 +18,7 @@ pipeline:
       - apk --no-cache add make
       - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD $DOCKER_REGISTRY
       - make release DOCKERFILE=v0.12/debian-loggly
+      - make release DOCKERFILE=v0.12/debian-s3
+      - make release DOCKERFILE=v0.12/alpine-datadog
     when:
       branch: [ drone-support ]
