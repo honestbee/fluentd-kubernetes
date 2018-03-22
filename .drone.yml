@@ -1,0 +1,24 @@
+services:
+  docker:
+    image: docker:stable-dind
+    command: [ "--storage-driver=vfs", "--tls=false" ]
+    privileged: true
+
+pipeline:
+  build:
+    image: docker:stable
+    environment:
+      - DOCKER_HOST=tcp://docker:2375
+      - IMAGE_ORG=quay.io/honestbee
+    secrets:
+      - docker_username
+      - docker_password
+      - docker_registry
+    commands:
+      - apk --no-cache add make
+      - docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD $DOCKER_REGISTRY
+      - make release DOCKERFILE=v0.12/debian-loggly
+      - make release DOCKERFILE=v0.12/debian-s3
+      - make release DOCKERFILE=v0.12/alpine-datadog
+    when:
+      branch: [ drone-support ]
